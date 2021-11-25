@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+.item:nth-child(odd) {
+  background: rgb(249, 249, 255);
+}
+
+.item:last-child {
+  border-bottom: 1px solid rgb(194, 191, 191);
+}
+
 .item p {
   display: grid;
   place-items: center;

@@ -20,5 +20,13 @@ code {
 .App {
   max-width: 1200px;
   margin: 50px auto;
-  background: rgb(223, 219, 219);
+
+  padding: 10px;
+}
+
+input {
+  width: 200px;
+  margin: 0 auto;
+  font-size: 24px;
+  margin-bottom: 30px;
 }

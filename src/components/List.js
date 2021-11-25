@@ -1,7 +1,7 @@
 import Item from './Item';
 import styles from './List.module.css';
 import TitleItem from './TitleItem';
-const List = ({ items, onFilter, sortedBy }) => {
+const List = ({ items, onSort, sortedBy }) => {
   const titles = ['id', 'name', 'body', 'email'];
 
   return (
@@ -10,7 +10,7 @@ const List = ({ items, onFilter, sortedBy }) => {
         {titles.map((title) => (
           <TitleItem
             key={title}
-            onFilter={onFilter}
+            onSort={onSort}
             title={title}
             sortedBy={sortedBy}
             id={title}
