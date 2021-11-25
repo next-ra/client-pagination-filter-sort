@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/client-pagination-filter-sort/static/css/main.19298728.chunk.css",
+    "main.js": "/client-pagination-filter-sort/static/js/main.11915fc3.chunk.js",
+    "main.js.map": "/client-pagination-filter-sort/static/js/main.11915fc3.chunk.js.map",
+    "runtime-main.js": "/client-pagination-filter-sort/static/js/runtime-main.4c312e30.js",
+    "runtime-main.js.map": "/client-pagination-filter-sort/static/js/runtime-main.4c312e30.js.map",
+    "static/js/2.9de85cac.chunk.js": "/client-pagination-filter-sort/static/js/2.9de85cac.chunk.js",
+    "static/js/2.9de85cac.chunk.js.map": "/client-pagination-filter-sort/static/js/2.9de85cac.chunk.js.map",
+    "index.html": "/client-pagination-filter-sort/index.html",
+    "static/css/main.19298728.chunk.css.map": "/client-pagination-filter-sort/static/css/main.19298728.chunk.css.map",
+    "static/js/2.9de85cac.chunk.js.LICENSE.txt": "/client-pagination-filter-sort/static/js/2.9de85cac.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4c312e30.js",
+    "static/js/2.9de85cac.chunk.js",
+    "static/css/main.19298728.chunk.css",
+    "static/js/main.11915fc3.chunk.js"
+  ]
+}
