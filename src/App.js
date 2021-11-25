@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 import List from './components/List';
 import Pagination from './components/Pagination';
+import Search from './components/Search';
+
 function App() {
   const [allItems, setAllItems] = useState([]);
   const [sortedItems, setSortedItems] = useState([]);
@@ -13,14 +15,15 @@ function App() {
   });
   const [searchValue, setSearchValue] = useState('');
 
-  // const [currentPageState, setCurrentPageState] = useState([]);
+  // пагинация
+  const [currentPageState, setCurrentPageState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+  const [itemsPerPage] = useState(50);
 
   useEffect(() => {
     const lastItemIndex = currentPage * itemsPerPage;
     const firstItemIndex = lastItemIndex - itemsPerPage;
-    // setCurrentPageState(allItems.slice(firstItemIndex, lastItemIndex));
+    setCurrentPageState(allItems.slice(firstItemIndex, lastItemIndex));
     setSortedItems(allItems.slice(firstItemIndex, lastItemIndex));
   }, [currentPage, itemsPerPage, allItems]);
 
@@ -54,25 +57,6 @@ function App() {
     setSortedItems([...sortedItems].sort(filterBy(field)));
   };
 
-  function filterHelper(arr, searchValue) {
-    return arr.filter((obj) =>
-      Object.keys(obj).some(
-        (key) =>
-          key !== 'id' &&
-          key !== 'postId' &&
-          obj[key].toLowerCase().includes(searchValue.toLowerCase()),
-      ),
-    );
-  }
-
-  const onChangeHandler = (e) => {
-    setSearchValue(e.target.value);
-
-    const result = filterHelper(allItems, e.target.value);
-
-    setSortedItems(result);
-  };
-
   return (
     <div className="App">
       <Pagination
@@ -81,13 +65,13 @@ function App() {
         totalItems={allItems.length}
         currentPage={currentPage}
       />
-      <input
-        className="input"
-        type="text"
-        onChange={onChangeHandler}
-        placeholder="поиск"
-        value={searchValue}
+      <Search
+        setSearchValue={setSearchValue}
+        searchValue={searchValue}
+        setSortedItems={setSortedItems}
+        currentPageState={currentPageState}
       />
+
       <List items={sortedItems} onSort={sortHandler} sortedBy={sortedBy} />
     </div>
   );

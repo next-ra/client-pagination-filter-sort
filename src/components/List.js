@@ -1,6 +1,7 @@
 import Item from './Item';
 import styles from './List.module.css';
 import TitleItem from './TitleItem';
+
 const List = ({ items, onSort, sortedBy }) => {
   const titles = ['id', 'name', 'body', 'email'];
 
